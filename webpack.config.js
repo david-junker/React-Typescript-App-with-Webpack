@@ -1,7 +1,6 @@
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -37,9 +36,6 @@ const config = {
       filename: "index.html",
       inject: "body",
     }),
-    new NodePolyfillPlugin({
-        excludeAliases: ["console"]
-      }),
   ],
 };
 
